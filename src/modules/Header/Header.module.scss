@@ -1,0 +1,48 @@
+@use "@/styles/abstracts/index.module" as *;
+
+.Header {
+  position: relative;
+  margin: 0 auto;
+  height: 80px;
+  max-width: 1000px;
+  padding: 0 2rem;
+
+  &-Inner {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &-Navbar {
+    position: absolute;
+    right: 0;
+    top: 79px;
+    background-color: $light-color;
+    width: 0px;
+    height: calc(100vh - 79px);
+    transition: all 0.3s ease-in;
+    overflow: hidden;
+
+    &_active {
+      width: 70%;
+    }
+  }
+
+  @include tablet {
+    &-Menu {
+      display: none;
+    }
+
+    &-Navbar {
+      position: static;
+      top: auto;
+      right: auto;
+      width: auto;
+      height: auto;
+      background-color: transparent;
+      overflow: visible;
+      transition: none;
+    }
+  }
+}
