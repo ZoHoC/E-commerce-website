@@ -3,7 +3,7 @@ import { useState } from "react";
 
 import styles from "./Header.module.scss";
 
-import Logo from "../../../public/assets/icon/Logo.svg";
+import Logo from "@/../public/assets/icon/Logo.svg";
 import Navbar from "@/components/Navbar/Navbar";
 import { Squash as Hamburger } from "hamburger-react";
 
