@@ -2,13 +2,12 @@
 
 .Header {
   position: relative;
-  margin: 0 auto;
-  height: 80px;
-  max-width: 1000px;
-  padding: 0 2rem;
+  width: 100%;
 
   &-Inner {
-    height: 100%;
+    margin: 0 auto;
+    padding: 0 2em;
+    height: 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -29,7 +28,17 @@
     }
   }
 
+  &-Logo {
+    svg {
+      display: block;
+    }
+  }
+
   @include tablet {
+    &-Inner {
+      max-width: 960px;
+    }
+
     &-Menu {
       display: none;
     }
@@ -43,6 +52,12 @@
       background-color: transparent;
       overflow: visible;
       transition: none;
+    }
+  }
+
+  @include desktopLarge {
+    &-Inner {
+      max-width: 1100px;
     }
   }
 }

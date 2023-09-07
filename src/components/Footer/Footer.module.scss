@@ -1,6 +1,7 @@
 @use "@/styles/abstracts/index.module" as *;
 
 .Footer {
+  margin-top: auto;
   height: 80px;
   background-color: $dark-color;
   display: flex;
