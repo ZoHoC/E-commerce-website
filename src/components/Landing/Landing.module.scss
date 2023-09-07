@@ -1,0 +1,102 @@
+@use "@/styles/abstracts/index.module" as *;
+
+.Landing {
+  width: 100%;
+
+  &-Inner {
+    margin: 0 auto;
+    padding: 2em 2em;
+  }
+
+  &-Wrapper {
+    display: flex;
+    flex-direction: column;
+    &_display {
+      display: none;
+    }
+  }
+
+  &-Title {
+    font-size: 48px;
+    letter-spacing: 0.1rem;
+    text-transform: capitalize;
+    line-height: 1.25;
+    margin-bottom: 12px;
+    color: $grey-1;
+
+    &_block {
+      display: block;
+    }
+  }
+
+  &-Subtitle {
+    line-height: 2;
+    margin-bottom: 32px;
+    color: $grey-5;
+  }
+
+  &-Button {
+    align-self: flex-start;
+  }
+
+  @include tablet {
+    &-Inner {
+      max-width: 960px;
+
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  @include desktopLarge {
+    height: calc(100vh - 80px);
+
+    &-Inner {
+      max-width: 1100px;
+    }
+
+    &-Wrapper {
+      position: relative;
+      max-width: 400px;
+
+      &_display {
+        display: block;
+        flex-shrink: 0;
+
+        &::before {
+          content: "";
+          position: absolute;
+          width: 10%;
+          height: 80%;
+          background: $primary-color-9;
+          bottom: 0%;
+          left: -8%;
+          border-radius: 4px;
+        }
+      }
+    }
+
+    &-RoomImg {
+      max-width: 440px;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+
+      position: relative;
+      display: block;
+      border-radius: 4px;
+    }
+
+    &-WorkImg {
+      max-width: 250px;
+      width: 100%;
+      height: auto;
+
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      transform: translateX(-50%);
+      border-radius: 4px;
+    }
+  }
+}
