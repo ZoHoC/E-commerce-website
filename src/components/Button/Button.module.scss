@@ -26,26 +26,8 @@
   }
 
   &_secondary {
-    width: 70px;
-    height: 40px;
-    padding: 10px 20px;
-
-    // background-color: $secondary-bg-color;
-    // color: $primary-color;
-  }
-
-  &_tertiary {
-    width: inherit;
-    color: $light-color;
-    background: none;
-
-    font-weight: 500;
-    line-height: 21px;
-    text-transform: none;
-    text-decoration: underline;
-
-    &:hover {
-      box-shadow: none;
-    }
+    letter-spacing: 0.1rem;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
   }
 }
