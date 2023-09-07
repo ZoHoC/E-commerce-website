@@ -6,6 +6,12 @@
   align-items: center;
   gap: 20px;
 
+  @include tablet {
+    flex-direction: row;
+    justify-content: center;
+    gap: 40px;
+  }
+
   &-Link {
     color: $grey-3;
     text-transform: capitalize;
@@ -54,11 +60,5 @@
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-
-  @include tablet {
-    flex-direction: row;
-    justify-content: center;
-    gap: 40px;
   }
 }

@@ -3,16 +3,53 @@
 .Landing {
   width: 100%;
 
+  @include desktopLarge {
+    height: calc(100vh - 80px);
+  }
+
   &-Inner {
     margin: 0 auto;
     padding: 2em 2em;
+
+    @include tablet {
+      max-width: 960px;
+
+      display: flex;
+      justify-content: space-between;
+    }
+
+    @include desktopLarge {
+      max-width: 1100px;
+    }
   }
 
   &-Wrapper {
     display: flex;
     flex-direction: column;
+
     &_display {
       display: none;
+    }
+
+    @include desktopLarge {
+      position: relative;
+      max-width: 400px;
+
+      &_display {
+        display: block;
+        flex-shrink: 0;
+
+        &::before {
+          content: "";
+          position: absolute;
+          width: 10%;
+          height: 80%;
+          background: $primary-color-9;
+          bottom: 0%;
+          left: -8%;
+          border-radius: 4px;
+        }
+      }
     }
   }
 
@@ -39,44 +76,8 @@
     align-self: flex-start;
   }
 
-  @include tablet {
-    &-Inner {
-      max-width: 960px;
-
-      display: flex;
-      justify-content: space-between;
-    }
-  }
-
-  @include desktopLarge {
-    height: calc(100vh - 80px);
-
-    &-Inner {
-      max-width: 1100px;
-    }
-
-    &-Wrapper {
-      position: relative;
-      max-width: 400px;
-
-      &_display {
-        display: block;
-        flex-shrink: 0;
-
-        &::before {
-          content: "";
-          position: absolute;
-          width: 10%;
-          height: 80%;
-          background: $primary-color-9;
-          bottom: 0%;
-          left: -8%;
-          border-radius: 4px;
-        }
-      }
-    }
-
-    &-RoomImg {
+  &-RoomImg {
+    @include desktopLarge {
       max-width: 440px;
       width: 100%;
       height: auto;
@@ -86,8 +87,10 @@
       display: block;
       border-radius: 4px;
     }
+  }
 
-    &-WorkImg {
+  &-WorkImg {
+    @include desktopLarge {
       max-width: 250px;
       width: 100%;
       height: auto;

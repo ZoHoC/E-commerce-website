@@ -23,15 +23,9 @@
   &-Rights {
     &_block {
       display: block;
-    }
-  }
 
-  @include tablet {
-    .Footer {
-      &-Rights {
-        &_block {
-          display: inline;
-        }
+      @include tablet {
+        display: inline;
       }
     }
   }
