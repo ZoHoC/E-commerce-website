@@ -1,1 +1,26 @@
 @use "@/styles/abstracts/index.module" as *;
+
+.Section {
+  width: 100%;
+
+  &_secondary {
+    background-color: $primary-color-10;
+  }
+
+  &_tertiary {
+    background-color: $grey-10;
+  }
+
+  &-Inner {
+    padding: 2em 2em;
+
+    @include tablet {
+      margin: 0 auto;
+      max-width: 960px;
+    }
+
+    @include desktopLarge {
+      max-width: 1100px;
+    }
+  }
+}

@@ -1,24 +1,23 @@
 import styles from "./Section.module.scss";
 
-const Section = ({
-  helperText,
-  title,
-  actionContainer,
-  isSecondary = false,
-  children,
-}) => {
+const Section = ({ isSecondary = false, isTertiary = false, children }) => {
+  let modifierClass = styles["Section"];
+
+  switch (true) {
+    case isSecondary:
+      modifierClass = `${styles["Section"]} ${styles["Section_secondary"]}`;
+      break;
+    case isTertiary:
+      modifierClass = `${styles["Section"]} ${styles["Section_tertiary"]}`;
+      break;
+    default:
+      modifierClass;
+      break;
+  }
+
   return (
-    <section className={`Section ${isSecondary ? "Section_secondary" : ""}`}>
-      <div className="Section-Inner">
-        {helperText && <p className="Section-HelperText">{helperText}</p>}
-        {(title || actionContainer) && (
-          <div className="Section-Header">
-            {title && <h2 className="Section-Title">{title}</h2>}
-            {actionContainer}
-          </div>
-        )}
-        {children}
-      </div>
+    <section className={modifierClass}>
+      <div className={styles["Section-Inner"]}>{children}</div>
     </section>
   );
 };
