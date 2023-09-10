@@ -3,6 +3,8 @@
 .Landing {
   width: 100%;
 
+  display: flex;
+
   @include desktopLarge {
     height: calc(100vh - 80px);
   }
@@ -13,13 +15,14 @@
 
     @include tablet {
       max-width: 960px;
-
-      display: flex;
-      justify-content: space-between;
     }
 
     @include desktopLarge {
       max-width: 1100px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 96px;
+      place-items: center;
     }
   }
 
@@ -33,7 +36,6 @@
 
     @include desktopLarge {
       position: relative;
-      max-width: 400px;
 
       &_display {
         display: block;
@@ -70,6 +72,10 @@
     line-height: 2;
     margin-bottom: 32px;
     color: $grey-5;
+
+    @include desktopLarge {
+      font-size: 20px;
+    }
   }
 
   &-Button {
