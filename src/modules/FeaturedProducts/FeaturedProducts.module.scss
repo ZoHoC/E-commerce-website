@@ -1,0 +1,48 @@
+@use "@/styles/abstracts/index.module" as *;
+
+.FeaturedProducts {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
+
+  &-Container {
+  }
+
+  &-Title {
+    font-size: 32px;
+    letter-spacing: 0.1rem;
+    line-height: 1.25;
+    margin-bottom: 12px;
+    text-transform: capitalize;
+
+    @include tablet {
+      font-size: 40px;
+    }
+  }
+
+  &-Underline {
+    width: 96px;
+    height: 4px;
+    background: $primary-color-5;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &-Grid {
+    display: grid;
+    gap: 40px;
+
+    @include tablet {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include desktopLarge {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  &-Button {
+  }
+}
