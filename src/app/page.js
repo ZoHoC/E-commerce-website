@@ -1,29 +1,23 @@
-import Contact from "@/components/Contact/Contact";
 import styles from "./page.module.scss";
+
+import Contact from "@/components/Contact/Contact";
 import Footer from "@/components/Footer/Footer";
 import Landing from "@/components/Landing/Landing";
 import Section from "@/components/Section/Section";
 import Header from "@/modules/Header/Header";
-import Services from "@/components/Services/Services";
+import Services from "@/modules/Services/Services";
+import FeaturedProducts from "@/modules/FeaturedProducts/FeaturedProducts";
 
-export default function Home() {
+export default function Home(props) {
   return (
     <>
       <Header />
       <main>
         <Landing />
-        <Section
-          title={"Featured Products"}
-          isTertiary
-          titleAlignment="center"
-        ></Section>
-        <Section
-          title={"Custom Furniture Built Only For You"}
-          actionContainer={
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque quisquam saepe id reiciendis sunt, repudiandae libero amet rem quia quod?"
-          }
-          isSecondary
-        >
+        <Section isTertiary>
+          <FeaturedProducts data={props} />
+        </Section>
+        <Section isSecondary>
           <Services />
         </Section>
         <Section title={"Join our newsletter and get 20% off"}>
