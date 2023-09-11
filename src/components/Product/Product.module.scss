@@ -59,16 +59,12 @@
   }
 
   &-Title {
+    margin-bottom: 0;
     font-size: 16px;
-    letter-spacing: 0.1rem;
-    text-transform: capitalize;
-    line-height: 1.25;
+    font-weight: 400;
   }
 
   &-Price {
     color: $primary-color-5;
-    letter-spacing: 0.1rem;
-    line-height: 1.5;
-    font-size: 16px;
   }
 }

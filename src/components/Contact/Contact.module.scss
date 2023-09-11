@@ -6,15 +6,6 @@
   }
 
   &-Title {
-    font-size: 24px;
-    letter-spacing: 0.1rem;
-    line-height: 1.25;
-    margin-bottom: 12px;
-    color: $grey-1;
-
-    @include tablet {
-      font-size: 32px;
-    }
   }
 
   &-Wrapper {
@@ -29,11 +20,6 @@
     margin-bottom: 20px;
     color: $grey-5;
     line-height: 2;
-    font-size: 14px;
-
-    @include desktopLarge {
-      font-size: 16px;
-    }
   }
 
   &-Form {

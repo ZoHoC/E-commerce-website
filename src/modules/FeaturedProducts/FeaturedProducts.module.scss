@@ -11,15 +11,6 @@
   }
 
   &-Title {
-    font-size: 32px;
-    letter-spacing: 0.1rem;
-    line-height: 1.25;
-    margin-bottom: 12px;
-    text-transform: capitalize;
-
-    @include tablet {
-      font-size: 40px;
-    }
   }
 
   &-Underline {

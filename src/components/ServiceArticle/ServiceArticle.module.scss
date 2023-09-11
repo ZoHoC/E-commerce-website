@@ -26,24 +26,12 @@
   }
 
   &-Title {
-    margin-bottom: 12px;
     font-size: 20px;
-    text-transform: capitalize;
-    letter-spacing: 0.1rem;
     color: $primary-color-1;
-
-    @include tablet {
-      font-size: 24px;
-    }
   }
 
   &-Description {
     color: $primary-color-2;
-    font-size: 14px;
     line-height: 1.8;
-  }
-
-  @include desktopLarge {
-    font-size: 16px;
   }
 }
