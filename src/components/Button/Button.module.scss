@@ -31,4 +31,11 @@
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
   }
+
+  &_tertiary {
+    letter-spacing: 0.1rem;
+    background: $red-dark;
+    color: $light-color;
+    padding: 4px 8px;
+  }
 }
