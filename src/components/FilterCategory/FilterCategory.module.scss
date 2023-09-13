@@ -1,0 +1,46 @@
+@use "@/styles/abstracts/index.module" as *;
+
+.Category {
+  padding: 20px 0;
+
+  &-Container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  &-Title {
+    font-size: 14px;
+
+    @include tablet {
+      font-size: 16px;
+    }
+  }
+
+  &-Button {
+    display: block;
+
+    padding: 4px 0;
+    border: none;
+    border-bottom: 1px solid transparent;
+
+    background: transparent;
+    text-transform: capitalize;
+
+    color: $grey-5;
+    cursor: pointer;
+
+    &:hover {
+      color: $grey-7;
+    }
+
+    &_active {
+      border-color: $grey-5;
+
+      &:hover {
+        border-color: $grey-7;
+      }
+    }
+  }
+}
