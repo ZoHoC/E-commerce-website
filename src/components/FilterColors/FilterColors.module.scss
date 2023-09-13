@@ -1,0 +1,61 @@
+@use "@/styles/abstracts/index.module" as *;
+
+.Colors {
+  padding: 20px 0;
+  &-Title {
+    font-size: 14px;
+
+    @include tablet {
+      font-size: 16px;
+    }
+  }
+
+  &-Container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &-AllButton {
+    padding: 4px 0;
+    text-transform: capitalize;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid transparent;
+
+    letter-spacing: 0.1rem;
+    color: $grey-5;
+    cursor: pointer;
+
+    opacity: 0.5;
+
+    &_active {
+      opacity: 1;
+      border-bottom-color: $grey-5;
+    }
+  }
+
+  &-Button {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #222;
+
+    border: none;
+    cursor: pointer;
+    opacity: 0.5;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      font-size: 0.5rem;
+      color: $light-color;
+    }
+
+    &_active {
+      opacity: 1;
+    }
+  }
+}
