@@ -1,0 +1,21 @@
+@use "@/styles/abstracts/index.module" as *;
+
+.FilterPrice {
+  padding: 20px 0;
+
+  &-Title {
+    font-size: 14px;
+
+    @include tablet {
+      font-size: 16px;
+    }
+  }
+
+  &-Price {
+    margin-bottom: 4px;
+  }
+
+  &-Input {
+    cursor: pointer;
+  }
+}
