@@ -4,12 +4,7 @@ import styles from "./Filters.module.scss";
 
 import { useDispatch, useSelector } from "react-redux";
 
-import {
-  updateFilters,
-  clearFilters,
-  setSortBy,
-  toggleGridView,
-} from "@/redux/reducer/filtersReducer";
+import { updateFilters, clearFilters } from "@/redux/reducer/filtersReducer";
 
 import { getUniqueValues } from "@/utility/getUniqueValues";
 import FilterSearchBar from "@/components/FilterSearchBar/FilterSearchBar";
