@@ -1,0 +1,26 @@
+@use "@/styles/abstracts/index.module" as *;
+
+.FilterShipping {
+  padding: 20px 0;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  &-Label {
+    font-size: 14px;
+    text-transform: capitalize;
+    letter-spacing: 0.1rem;
+    cursor: pointer;
+
+    @include tablet {
+      font-size: 16px;
+    }
+  }
+
+  &-Input {
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
+  }
+}
