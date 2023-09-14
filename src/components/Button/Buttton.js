@@ -3,6 +3,7 @@ import styles from "./Button.module.scss";
 const Button = ({
   isSecondary = false,
   isTertiary = false,
+  isQuaternary = false,
   handleClick,
   children,
 }) => {
@@ -14,6 +15,9 @@ const Button = ({
       break;
     case isTertiary:
       modifierClass = `${styles["Button"]} ${styles["Button_tertiary"]}`;
+      break;
+    case isQuaternary:
+      modifierClass = `${styles["Button"]} ${styles["Button_quaternary"]}`;
       break;
     default:
       modifierClass;

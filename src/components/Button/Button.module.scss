@@ -37,5 +37,10 @@
     background: $red-dark;
     color: $light-color;
     padding: 4px 8px;
+    height: auto;
+  }
+
+  &_quaternary {
+    font-size: 12px;
   }
 }
