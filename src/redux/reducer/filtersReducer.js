@@ -10,7 +10,7 @@ const initialState = {
   price: 0,
   shipping: false,
   sortBy: "price-lowest",
-  view: { gridView: true, listView: false },
+  view: true,
 };
 
 const filtersSlice = createSlice({
@@ -27,9 +27,7 @@ const filtersSlice = createSlice({
       state.sortBy = action.payload;
     },
     toggleView: state => {
-      // Toggle both gridView and listView
-      state.view.gridView = !state.view.gridView;
-      state.view.listView = !state.view.gridView; // Set listView to the opposite of gridView
+      state.view = !state.view;
     },
   },
 });
