@@ -1,0 +1,32 @@
+@use "@/styles/abstracts/index.module" as *;
+
+.ProductGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  @include tablet {
+    flex-direction: row;
+  }
+
+  &-Grid {
+    display: grid;
+    gap: 32px;
+    @include tablet {
+      grid-template-columns: 1fr 1fr;
+    }
+    @include desktopLarge {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  &-List {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &-SortingBar {
+    grid-column: 1 / -1;
+  }
+}
