@@ -8,35 +8,27 @@ import { setSortBy, toggleView } from "@/redux/reducer/filtersReducer";
 import { useDispatch, useSelector } from "react-redux";
 
 const SortingBar = () => {
-  const {
-    products,
-    sortBy,
-    view: { gridView, listView },
-  } = useSelector(state => state.filters);
+  const { products, sortBy, view } = useSelector(state => state.filters);
   const dispatch = useDispatch();
 
-  const handleGridViewClick = () => !gridView && dispatch(toggleView());
+  const handleGridViewClick = () => !view && dispatch(toggleView());
 
-  const handleListViewClick = () => gridView && dispatch(toggleView());
+  const handleListViewClick = () => view && dispatch(toggleView());
 
   return (
     <aside className={styles["SortingBar"]}>
       <div className={styles["SortingBar-Wrapper"]}>
         <button
-          className={`${
-            gridView
-              ? `${styles["SortingBar-Button"]} ${styles["SortingBar-Button_active"]}`
-              : styles["SortingBar-Button"]
+          className={`${styles["SortingBar-Button"]} ${
+            view ? styles["SortingBar-Button_active"] : ""
           }`}
           onClick={handleGridViewClick}
         >
           <GridIcon />
         </button>
         <button
-          className={`${
-            listView
-              ? `${styles["SortingBar-Button"]} ${styles["SortingBar-Button_active"]}`
-              : styles["SortingBar-Button"]
+          className={`${styles["SortingBar-Button"]} ${
+            !view ? styles["SortingBar-Button_active"] : ""
           }`}
           onClick={handleListViewClick}
         >
