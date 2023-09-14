@@ -1,17 +1,11 @@
 
-------------------------------------------------
-              WORK IN PROGRESS!
-------------------------------------------------
-
+# <p align="center">WORK IN PROGRESS!</p>
 Live server:
 
 https://e-commerce-website-psi-lovat.vercel.app/products
 
-# <p align="center">WORK IN PROGRESS!</p>
 
-------------------------------------------------
-              WORK IN PROGRESS!
-------------------------------------------------
+
 
 
 
