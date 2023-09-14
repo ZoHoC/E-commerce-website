@@ -1,0 +1,129 @@
+@use "@/styles/abstracts/index.module" as *;
+
+.ProductCard {
+  &_list {
+    @include tablet {
+      display: flex;
+      gap: 32px;
+    }
+  }
+
+  &-Container {
+    position: relative;
+    background-color: $dark-color;
+    border-radius: 4px;
+
+    &:hover {
+      .ProductCard-Image {
+        opacity: 0.5;
+      }
+
+      .ProductCard-Link {
+        opacity: 1;
+      }
+    }
+  }
+
+  &-Image {
+    display: block;
+    width: 100%;
+    height: 230px;
+
+    object-fit: cover;
+    border-radius: 4px;
+    transition: all 300ms linear;
+
+    @include tablet {
+      min-width: 265px;
+    }
+  }
+
+  &-Link {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: $primary-color-5;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+
+    transition: all 300ms linear;
+    opacity: 0;
+    cursor: pointer;
+
+    svg {
+      font-size: 1.25rem;
+      color: $light-color;
+    }
+  }
+
+  &-Header {
+    padding: 12px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    &_grid {
+      padding: 10px 0;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0;
+    }
+  }
+
+  &-Title {
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 0;
+
+    &_list {
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    @include tablet {
+      font-size: 16px;
+
+      &_list {
+        font-size: 24px;
+        font-weight: 700;
+      }
+    }
+  }
+
+  &-Wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &-Price {
+    color: $primary-color-5;
+
+    &_list {
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    @include tablet {
+      &_list {
+        font-size: 16px;
+        font-weight: 700;
+      }
+    }
+  }
+
+  &-Description {
+  }
+
+  &-Button {
+    width: 100px;
+  }
+}
