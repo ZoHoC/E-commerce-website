@@ -1,6 +1,13 @@
 @use "@/styles/abstracts/index.module" as *;
 
 .Filters {
-  max-width: 250px;
-  position: sticky;
+  width: 150px;
+  flex-shrink: 0;
+
+  @include tablet {
+    position: sticky;
+    align-self: flex-start;
+
+    top: 16px;
+  }
 }

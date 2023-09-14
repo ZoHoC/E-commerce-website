@@ -3,10 +3,9 @@
 import styles from "./Filters.module.scss";
 
 import { useDispatch, useSelector } from "react-redux";
-
 import { updateFilters, clearFilters } from "@/redux/reducer/filtersReducer";
-
 import { getUniqueValues } from "@/utility/getUniqueValues";
+
 import FilterSearchBar from "@/components/FilterSearchBar/FilterSearchBar";
 import FilterCategory from "@/components/FilterCategory/FilterCategory";
 import FilterCompany from "@/components/FilterCompany/FilterCompany";
