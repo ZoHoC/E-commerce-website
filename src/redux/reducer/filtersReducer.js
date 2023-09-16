@@ -5,7 +5,7 @@ const initialState = {
   products: mockDB,
   text: "",
   category: "all",
-  company: "",
+  company: "all",
   color: "all",
   price: 0,
   shipping: false,
@@ -17,11 +17,14 @@ const filtersSlice = createSlice({
   name: "filters",
   initialState,
   reducers: {
+    // getProducts: (state, action) => {
+    //   state.products = action.payload;
+    // },
     updateFilters: (state, action) => {
       return { ...state, ...action.payload };
     },
     clearFilters: state => {
-      return initialState;
+      return { ...initialState, products: state.products };
     },
     setSortBy: (state, action) => {
       state.sortBy = action.payload;
@@ -32,6 +35,11 @@ const filtersSlice = createSlice({
   },
 });
 
-export const { updateFilters, clearFilters, setSortBy, toggleView } =
-  filtersSlice.actions;
+export const {
+  getProducts,
+  updateFilters,
+  clearFilters,
+  setSortBy,
+  toggleView,
+} = filtersSlice.actions;
 export default filtersSlice.reducer;
