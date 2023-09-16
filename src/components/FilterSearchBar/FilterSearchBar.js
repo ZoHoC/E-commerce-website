@@ -11,7 +11,9 @@ const FilterSearchBar = ({ text, updateFilters }) => {
       placeholder="search"
       className={styles["FilterSearchBar"]}
       value={text}
-      onChange={e => dispatch(updateFilters({ text: e.target.value }))}
+      onChange={e =>
+        dispatch(updateFilters({ text: e.target.value.toLowerCase().trim() }))
+      }
     />
   );
 };
