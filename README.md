@@ -2,7 +2,7 @@
 # <p align="center">WORK IN PROGRESS!</p>
 Live server:
 
-https://e-commerce-website-psi-lovat.vercel.app/products
+https://e-commerce-website-psi-lovat.vercel.app/
 
 
 -----------------------------------------------------------------
