@@ -4,9 +4,11 @@ import Filters from "../Filters/Filters";
 import styles from "./ProductGrid.module.scss";
 import ProductCard from "@/components/ProductCard/ProductCard";
 import { useSelector } from "react-redux";
+import { getFilteredProducts } from "@/redux/selector/getFilteredProducts";
 
 const ProductGrid = () => {
-  const { products, view } = useSelector(state => state.filters);
+  const { view } = useSelector(state => state.filters);
+  const filteredProducts = useSelector(getFilteredProducts);
 
   const gridClass = view
     ? styles["ProductGrid-Grid"]
@@ -19,7 +21,12 @@ const ProductGrid = () => {
         <div className={styles["ProductGrid-SortingBar"]}>
           <SortingBar />
         </div>
-        {products.map(({ id, name, price, description, image }) => (
+        {filteredProducts.length === 0 && (
+          <div className={styles["ProductGrid-NoProducts"]}>
+            Sorry, no products matched your search...
+          </div>
+        )}
+        {filteredProducts.map(({ id, name, price, description, image }) => (
           <ProductCard
             key={id}
             id={id}
