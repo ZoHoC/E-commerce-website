@@ -1,18 +1,18 @@
-import Filters from "@/modules/Filters/Filters";
 import Footer from "@/components/Footer/Footer";
 import Header from "@/modules/Header/Header";
 import Section from "@/components/Section/Section";
-import SortingBar from "@/components/SortingBar/SortingBar";
-import ProductCard from "@/components/ProductCard/ProductCard";
-import ProductGrid from "@/modules/ProductGrid/ProductGrid";
 
-const Products = () => {
+import ProductGrid from "@/modules/ProductGrid/ProductGrid";
+import { fetchData } from "@/api/productsFetch";
+
+const Products = async () => {
+  const data = await fetchData();
   return (
     <>
       <Header />
       <main>
         <Section>
-          <ProductGrid />
+          <ProductGrid data={data} />
         </Section>
       </main>
       <Footer />
