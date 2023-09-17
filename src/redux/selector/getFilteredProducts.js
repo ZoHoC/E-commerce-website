@@ -1,3 +1,11 @@
+// DEPRACATED!!!!
+// DEPRACATED!!!!
+// DEPRACATED!!!!
+// DEPRACATED!!!!
+// DEPRACATED!!!!
+// DEPRACATED!!!!
+// NOT USED CURRENTLY LEFT AS EXAMPLE OF CREATE SELECTOR LEARNING/FUTURE PURPOSE
+
 import { createSelector } from "reselect";
 
 const getProducts = state => state.filters.products;
