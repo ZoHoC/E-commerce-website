@@ -4,13 +4,11 @@ import styles from "./SortingBar.module.scss";
 import GridIcon from "@/../public/assets/icon/GridIcon.svg";
 import ListIcon from "@/../public/assets/icon/ListIcon.svg";
 import { setSortBy, toggleView } from "@/redux/reducer/filtersReducer";
-import { getFilteredProducts } from "@/redux/selector/getFilteredProducts";
 
 import { useDispatch, useSelector } from "react-redux";
 
-const SortingBar = () => {
+const SortingBar = ({ filteredProducts }) => {
   const { sortBy, view } = useSelector(state => state.filters);
-  const filteredProducts = useSelector(getFilteredProducts);
   const dispatch = useDispatch();
 
   const handleGridViewClick = () => !view && dispatch(toggleView());
