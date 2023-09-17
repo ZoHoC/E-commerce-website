@@ -1,8 +1,6 @@
-import { mockDB } from "@/utility/mockDB";
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  products: mockDB,
   text: "",
   category: "all",
   company: "all",
@@ -17,9 +15,6 @@ const filtersSlice = createSlice({
   name: "filters",
   initialState,
   reducers: {
-    // getProducts: (state, action) => {
-    //   state.products = action.payload;
-    // },
     updateFilters: (state, action) => {
       return { ...state, ...action.payload };
     },
