@@ -13,18 +13,30 @@ import FilterColors from "@/components/FilterColors/FilterColors";
 import FilterPrice from "@/components/FilterPrice/FilterPrice";
 import FilterShipping from "@/components/FilterShipping/FilterShipping";
 import Button from "@/components/Button/Buttton";
+import { useEffect, useRef } from "react";
 
-const Filters = () => {
-  const { products, text, category, company, color, price, shipping } =
-    useSelector(state => state.filters);
+const Filters = ({ data }) => {
+  const { text, category, company, color, price, shipping } = useSelector(
+    state => state.filters
+  );
   const dispatch = useDispatch();
 
-  const categories = getUniqueValues(products, "category");
-  const companies = getUniqueValues(products, "company");
-  const colors = getUniqueValues(products, "colors");
-  const maxPrice = products.reduce((max, product) => {
+  const categories = getUniqueValues(data, "category");
+  const companies = getUniqueValues(data, "company");
+  const colors = getUniqueValues(data, "colors");
+  const maxPrice = data.reduce((max, product) => {
     return product.price > max ? product.price : max;
   }, 0);
+
+  const isFirstRender = useRef(true);
+
+  useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return;
+    }
+    dispatch(updateFilters({ price: maxPrice }));
+  }, [maxPrice]);
 
   return (
     <aside className={styles["Filters"]}>
