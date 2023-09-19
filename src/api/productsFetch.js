@@ -1,8 +1,6 @@
-import { apiProductOrigin } from "./api";
-
-export async function fetchData() {
+export async function fetchData(api) {
   try {
-    const response = await fetch(apiProductOrigin, {
+    const response = await fetch(api, {
       next: { revalidate: 60 },
     });
     if (!response.ok) {
