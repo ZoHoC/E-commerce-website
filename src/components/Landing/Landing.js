@@ -3,6 +3,7 @@ import Image from "next/image";
 import landingRoom from "@/../public/assets/images/landingRoom.jpeg";
 import landingWork from "@/../public/assets/images/landingWork.jpeg";
 import Button from "../Button/Buttton";
+import Link from "next/link";
 
 export default function Landing() {
   return (
@@ -20,9 +21,9 @@ export default function Landing() {
             The products can be added to the cart and then proceeded to the
             checkout. The checkout is integrated with Stripe Payment.
           </p>
-          <div className={styles["Landing-Button"]}>
+          <Link href={"/products"} className={styles["Landing-Button"]}>
             <Button>shop now</Button>
-          </div>
+          </Link>
         </div>
         <div
           className={`${styles["Landing-Wrapper"]} ${styles["Landing-Wrapper_display"]}`}
@@ -32,20 +33,12 @@ export default function Landing() {
             src={landingRoom}
             alt="nice room"
             placeholder="blur"
-            sizes="440px"
-            width={440}
-            height={550}
-            priority={true}
           />
           <Image
             className={styles["Landing-WorkImg"]}
             src={landingWork}
             alt="person working"
             placeholder="blur"
-            sizes="250px"
-            width={250}
-            height={160}
-            priority={true}
           />
         </div>
       </div>
