@@ -4,9 +4,10 @@ import Button from "../../components/Button/Buttton";
 import { fetchData } from "@/api/productsFetch";
 import Product from "@/components/Product/Product";
 import randomizeArray from "@/utility/randomizeArray";
+import { apiProductOrigin } from "@/api/api";
 
 const FeaturedProducts = async () => {
-  const data = await fetchData();
+  const data = await fetchData(apiProductOrigin);
   const shuffledData = randomizeArray(data);
 
   return (
