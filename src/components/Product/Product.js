@@ -4,6 +4,7 @@ import Image from "next/image";
 
 import { formatPrice } from "@/utility/formatPrice";
 import MagnifyingGlass from "@/../public/assets/icon/MagnifyingGlass.svg";
+import Link from "next/link";
 
 const Product = ({ image, name, price, id }) => {
   return (
@@ -16,9 +17,9 @@ const Product = ({ image, name, price, id }) => {
           alt={name}
           className={styles["Product-Image"]}
         />
-        <div className={styles["Product-Link"]}>
+        <Link href={`/products/${id}`} className={styles["Product-Link"]}>
           <MagnifyingGlass />
-        </div>
+        </Link>
       </div>
       <header className={styles["Product-Header"]}>
         <h3 className={styles["Product-Title"]}>{name}</h3>

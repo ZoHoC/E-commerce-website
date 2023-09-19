@@ -3,6 +3,7 @@ import Image from "next/image";
 import { formatPrice } from "@/utility/formatPrice";
 import Button from "../Button/Buttton";
 import MagnifyingGlass from "@/../public/assets/icon/MagnifyingGlass.svg";
+import Link from "next/link";
 
 const ProductCard = ({ id, name, image, price, description, view }) => {
   return (
@@ -20,9 +21,9 @@ const ProductCard = ({ id, name, image, price, description, view }) => {
           className={styles["ProductCard-Image"]}
         />
         {view && (
-          <div className={styles["ProductCard-Link"]}>
+          <Link href={`/products/${id}`} className={styles["ProductCard-Link"]}>
             <MagnifyingGlass />
-          </div>
+          </Link>
         )}
       </div>
 
@@ -52,9 +53,12 @@ const ProductCard = ({ id, name, image, price, description, view }) => {
             {description.substring(0, 150)}...
           </p>
 
-          <div className={styles["ProductCard-Button"]}>
+          <Link
+            href={`/products/${id}`}
+            className={styles["ProductCard-Button"]}
+          >
             <Button isQuaternary>details</Button>
-          </div>
+          </Link>
         </div>
       )}
     </article>

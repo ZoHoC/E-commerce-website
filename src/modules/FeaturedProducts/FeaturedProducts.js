@@ -5,6 +5,7 @@ import { fetchData } from "@/api/productsFetch";
 import Product from "@/components/Product/Product";
 import randomizeArray from "@/utility/randomizeArray";
 import { apiProductOrigin } from "@/api/api";
+import Link from "next/link";
 
 const FeaturedProducts = async () => {
   const data = await fetchData(apiProductOrigin);
@@ -18,12 +19,14 @@ const FeaturedProducts = async () => {
       </div>
       <div className={styles["FeaturedProducts-Grid"]}>
         {shuffledData.slice(0, 3).map(({ id, name, image, price }) => {
-          return <Product key={id} name={name} image={image} price={price} />;
+          return (
+            <Product key={id} id={id} name={name} image={image} price={price} />
+          );
         })}
       </div>
-      <div className={styles["FeaturedProducts-Button"]}>
+      <Link href={"/products"} className={styles["FeaturedProducts-Button"]}>
         <Button>all products</Button>
-      </div>
+      </Link>
     </div>
   );
 };

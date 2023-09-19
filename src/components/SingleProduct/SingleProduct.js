@@ -48,6 +48,7 @@ const SingleProduct = ({
             height={600}
             alt={name}
             className={styles["SingleProduct-Image"]}
+            priority={true}
           />
           <div className={styles["SingleProduct-Gallery"]}>
             {images.map((image, index) => (
