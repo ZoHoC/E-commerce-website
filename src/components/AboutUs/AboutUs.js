@@ -12,10 +12,6 @@ const AboutUs = () => {
           src={landingRoom}
           alt="nice room"
           placeholder="blur"
-          sizes="440px"
-          width={440}
-          height={550}
-          priority={true}
         />
         <div className={styles["AboutUS-Container"]}>
           <h1 className={styles["AboutUS-Title"]}>Our Story</h1>
