@@ -4,9 +4,10 @@ import Section from "@/components/Section/Section";
 
 import ProductGrid from "@/modules/ProductGrid/ProductGrid";
 import { fetchData } from "@/api/productsFetch";
+import { apiProductOrigin } from "@/api/api";
 
 const Products = async () => {
-  const data = await fetchData();
+  const data = await fetchData(apiProductOrigin);
   return (
     <>
       <Header />
